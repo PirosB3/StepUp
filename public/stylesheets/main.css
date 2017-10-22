@@ -67,3 +67,83 @@
     transition:height 1s;
     -webkit-transition:height 1s;
 }
+
+.event-detail-bg {
+    height: 264px;
+    background-image: url("/image2x.png");
+}
+
+.event-detail-bg h3 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 60px;
+}
+
+.event-detail-bg h3, .event-detail-bg h1, .event-detail-bg h5 {
+    margin: 0;
+    padding-left: 50px;
+    color: #FFFFFF;
+}
+
+.event-detail-bg h5 {
+    font-size: 20px;
+    line-height: 32px;
+    margin-top: 30px;
+}
+
+.day-block {
+    border: 1px solid #E5E5E5;
+    border-radius: 3px 3px 0 0;
+    background-color: #FFFFFF;
+    height: 72px;
+}
+
+.day-block-list:first-child {
+    margin-top: 50px;
+}
+
+.internal-blk {
+    margin-top: 25px;
+}
+
+.internal-blk.day {
+    font-size: 20px;
+}
+
+.internal-blk.steps, .internal-blk.raised{
+    color: #79808A;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.internal-blk.raised{
+    color: #F9C00C;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.internal-blk.notstarted{
+    color: #79808A;
+}
+
+.dollar {
+    color: #F9C00C;
+}
+
+.detail-right {
+    background-color: #F8F9FA;
+    height: 430px;
+    margin-top: 50px;
+}
+
+.detail-donate {
+    text-align: center;
+}
+
+.detail-donate button {
+    width: 190px;
+    margin-top: 30px;t
+}

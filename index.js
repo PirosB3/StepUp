@@ -17,8 +17,11 @@ app.get('/create', function(request, response) {
   response.render('pages/create');
 });
 
+app.get('/challenge/2', function(request, response) {
+  response.render('pages/detail');
+});
+
 app.post('/create', function(request, response) {
-    debugger;
 });
 
 app.get('/donate', function(request, response) {
