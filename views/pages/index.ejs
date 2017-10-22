@@ -2,6 +2,28 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+  <script type="text/javascript">
+  function onVisaCheckoutReady(){
+    V.init( {
+    apikey: "4Y0U2YEDFZXVTDIF46ZI21IRTjwp1vU9c8STufbZMzqRXVH2k",
+    settings: {
+      shipping: {
+        collectShipping: false
+      }
+    },
+    paymentRequest:{
+      currencyCode: "USD",
+      subtotal: "11.00"
+    }
+    });
+    V.on("payment.success", function(payment)
+      {alert(JSON.stringify(payment)); });
+    V.on("payment.cancel", function(payment)
+      {alert(JSON.stringify(payment)); });
+    V.on("payment.error", function(payment, error)
+      {alert(JSON.stringify(error)); });
+  }
+  </script>
 </head>
 
 <body>
@@ -14,6 +36,7 @@
       <img src="/lang-logo.png">
     </a>
     <h1>Getting Started with Node on Heroku v1.0 dev branch</h1>
+    <img alt="Visa Checkout" class="v-button" role="button" src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"/>
     <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
     <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started with Node</a>
     <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
@@ -61,6 +84,7 @@
   </div>
 </div>
 
-
+<script type="text/javascript" src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
+</script>
 </body>
 </html>
