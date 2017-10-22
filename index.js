@@ -21,7 +21,14 @@ app.get('/create', function(request, response) {
 });
 
 app.get('/challenge/2', function(request, response) {
-  response.render('pages/detail');
+    models.getModels().then(ms => {
+        return ms.Donations.findAll({where: {challenge_id: '2'}});
+    }).then((donations) => {
+        console.log(donations);
+        response.render('pages/detail', {
+            donations: donations
+        });
+    });
 });
 
 app.post('/challenge/2/donate', function(request, response) {

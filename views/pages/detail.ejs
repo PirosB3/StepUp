@@ -105,15 +105,17 @@
                 </div>
                 <div class="row detail-supporter">
                     <h3>Supporter</h3>
-                    <div class="row detail-supporter-list">
-                        <div class="col-md-3 text-right">
-                            <img height="46" class="img-circle" src="http://via.placeholder.com/204x204" />
+                    <% for(var i=0; i<donations.length; i++) {%>
+                        <div class="row detail-supporter-list">
+                            <div class="col-md-3 text-right">
+                                <img height="46" class="img-circle" src="http://via.placeholder.com/204x204" />
+                            </div>
+                            <div class="col-md-9">
+                                <p class="detail-supporter-list-title"><%= donations[i].name %></p>
+                                <p>Will donate $50</p>
+                            </div>
                         </div>
-                        <div class="col-md-9">
-                            <p class="detail-supporter-list-title">John Doe</p>
-                            <p>Will donate $50</p>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>
