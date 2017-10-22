@@ -2,6 +2,39 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+  <script type="text/javascript">
+  function onVisaCheckoutReady(){
+    V.init( {
+    apikey: "4Y0U2YEDFZXVTDIF46ZI21IRTjwp1vU9c8STufbZMzqRXVH2k",
+    settings: {
+      displayName: "StepUp",
+      shipping: {
+        collectShipping: false
+      }
+    },
+    paymentRequest:{
+      currencyCode: "USD",
+      subtotal: "10.00",
+      total: "10.00",
+      description: "Donation"
+    }
+    });
+    V.on("payment.success", function(payment) {
+        $(function() {
+            $.post('/challenge/2/donate', {
+                encPaymentData: payment.encPaymentData,
+                encKey: payment.encKey,
+            }, function(res) {
+                window.location = "/challenge/2"
+            });
+        });
+    });
+    V.on("payment.cancel", function(payment)
+      {alert(JSON.stringify(payment)); });
+    V.on("payment.error", function(payment, error)
+      {alert("ERROR " + JSON.stringify(error)); });
+  }
+  </script>
 </head>
 
 <body>
@@ -58,13 +91,26 @@
             </div>
             <div class="col-md-4 col-md-offset-1 detail-right">
                 <div class="row detail-donate">
-                    <button type="button" class="btn btn-primary">DONATE</button>
+                    <img alt="Visa Checkout" class="v-button" role="button" src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"/>
                 </div>
                 <div class="row detail-supporter">
                     <h3>Supporter</h3>
+                    <% for(var i=0; i<donations.length; i++) {%>
+                        <div class="row detail-supporter-list">
+                            <div class="col-md-3 text-right">
+                                <img height="46" class="img-circle" src="http://via.placeholder.com/204x204" />
+                            </div>
+                            <div class="col-md-9">
+                                <p class="detail-supporter-list-title"><%= donations[i].name %></p>
+                                <p>Will donate $50</p>
+                            </div>
+                        </div>
+                    <% } %>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
+    </script>
 </body>
 </html>
