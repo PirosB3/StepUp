@@ -29,6 +29,10 @@ app.get('/status', function(request, response) {
   response.render('pages/status');
 });
 
+app.post('/challenge', function(request, response) {
+  response.status(200).send('Success!');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
