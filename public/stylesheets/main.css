@@ -141,6 +141,7 @@
 
 .detail-donate {
     text-align: center;
+    margin-top: 10px;
 }
 
 .detail-donate button {
@@ -162,4 +163,9 @@
 .detail-supporter-list-title {
     font-size: 20px;
     font-weight: 500;
+}
+
+.detail-donations {
+    margin-left: 10px;
+    margin-right: 10px;
 }
