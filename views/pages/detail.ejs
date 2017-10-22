@@ -19,8 +19,14 @@
       description: "Donation"
     }
     });
-    V.on("payment.success", function(payment)
-      {debugger; alert("SUCCESS " + JSON.stringify(payment)); });
+    V.on("payment.success", function(payment) {
+        $.post('/challenge/2/donate', {
+            encPaymentData: payment.encPaymentData,
+            encKey: payment.encKey,
+        }, function(res) {
+            window.location = "/challenge/2"
+        }
+    });
     V.on("payment.cancel", function(payment)
       {alert(JSON.stringify(payment)); });
     V.on("payment.error", function(payment, error)

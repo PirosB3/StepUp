@@ -21,6 +21,10 @@ app.get('/challenge/2', function(request, response) {
   response.render('pages/detail');
 });
 
+app.post('/challenge/2/donate', function(request, response) {
+  response.render('pages/detail');
+});
+
 app.post('/create', function(request, response) {
 });
 

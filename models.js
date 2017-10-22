@@ -28,12 +28,19 @@ const Challenge = sequelize.define('report', {
   amount_usd: Sequelize.INTEGER
 });
 
+const Donations = sequelize.define('donation', {
+  challenge_id: Sequelize.STRING,
+  name: Sequelize.STRING,
+  amount: Sequelize.INTEGER
+});
+
 exports.getModels = function() {
     return new Promise(function(resolve, reject) {
         sequelize.sync().then(function() {
           resolve({
               Report: Report,
-              Challenge: Challenge
+              Challenge: Challenge,
+              Donations: Donations
           });
         });
     });
