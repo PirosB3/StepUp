@@ -17,6 +17,10 @@ app.get('/create', function(request, response) {
   response.render('pages/create');
 });
 
+app.post('/create', function(request, response) {
+    debugger;
+});
+
 app.get('/donate', function(request, response) {
   response.render('pages/donate');
 });

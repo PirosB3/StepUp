@@ -5,20 +5,57 @@
 </head>
 
 <body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 create-event-title">
+                Create a Fund Raising Event
+            </div>
+            <div class="col-md-8 create-event-meta">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form>
+                          <div class="form-group">
+                            <label>Select a Cause</label>
+                            <select class="form-control border-top-radius">
+                              <option>ALS Foundation</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
 
-<% include ../partials/nav.ejs %>
+                          <div class="form-group">
+                            <label>Select a challenge for the next 5 days</label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="http://via.placeholder.com/204x204" alt="..." class="img-circle">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="http://via.placeholder.com/204x204" alt="..." class="img-circle">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="http://via.placeholder.com/204x204" alt="..." class="img-circle">
+                                </div>
+                            </div>
+                          </div>
 
-<div>Start a StepUp Campaign</div>
+                          <div class="form-group">
+                            <label>Connect your FitBit</label> </br>
+                            <button type="submit" class="btn btn-primary">Connect your FitBit account</button>
+                          </div>
 
-<div>Select your cause</div>
+                          <div class="form-group">
+                            <label>Name your Challenge</label> </br>
+                            <input type="text"></input>
+                          </div>
 
-<div>Select a Challenge</div>
-
-<div>Connect your FitBit</div>
-
-<div>Name your challenge</div>
-
-<div>Start Challenge</div>
-
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -25,3 +25,45 @@
     .jumbotron .lang-logo img {
       max-width: 100%; }
 
+
+.header {
+    height: 96px;
+    background-color: #3AC569;
+}
+
+.create-event-title {
+    font-size: 57px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 80px;
+    margin-top: 120px;
+    background-color: white;
+}
+
+.create-event-meta {
+    background-color: #F8F9FA;
+    font-size: 20px;
+}
+
+.create-event-meta label {
+    padding-top: 73px;
+    font-size: 20px;
+}
+
+.create-event-meta .form-control {
+	height: 40px;
+        width: 724px;
+        border-radius: 2px; 
+        background-color: #FFFFFF;
+        box-shadow: 0 0 8px 0 rgba(0,0,0,0.12);
+}
+
+.create-event-meta input {
+    background-color:rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    outline:none;
+    height:30px;
+    transition:height 1s;
+    -webkit-transition:height 1s;
+}
