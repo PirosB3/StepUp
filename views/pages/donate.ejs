@@ -7,21 +7,24 @@
     V.init( {
     apikey: "4Y0U2YEDFZXVTDIF46ZI21IRTjwp1vU9c8STufbZMzqRXVH2k",
     settings: {
+      displayName: "StepUp",
       shipping: {
         collectShipping: false
       }
     },
     paymentRequest:{
       currencyCode: "USD",
-      subtotal: "11.00"
+      subtotal: "11.00",
+      total: "11.00",
+      description: "Donation"
     }
     });
     V.on("payment.success", function(payment)
-      {alert(JSON.stringify(payment)); });
+      {alert("SUCCESS " + JSON.stringify(payment)); });
     V.on("payment.cancel", function(payment)
       {alert(JSON.stringify(payment)); });
     V.on("payment.error", function(payment, error)
-      {alert(JSON.stringify(error)); });
+      {alert("ERROR " + JSON.stringify(error)); });
   }
   </script>
 </head>
@@ -35,5 +38,9 @@ Donate
 
 <script type="text/javascript" src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
 </script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js" integrity="sha384-KlVcf2tswD0JOTQnzU4uwqXcbAy57PvV48YUiLjqpk/MJ2wExQhg9tuozn5A1iVw" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js" integrity="sha384-hC7RwS0Uz+TOt6rNG8GX0xYCJ2EydZt1HeElNwQqW+3udRol4XwyBfISrNDgQcGA" crossorigin="anonymous"></script>
+<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 </body>
 </html>
