@@ -11,14 +11,24 @@
 <div>Start a StepUp Campaign</div>
 
 <div>Select your cause</div>
+<form name="createChallenge" action="challenge" method="POST">
 
-<div>Select a Challenge</div>
+<div>Select your cause</div>
+<select name="causeDropdown">
+  <option value="puertorico">Peurto Rico</option>
+  <option value="norcalfires">NorCal Fires</option>
+</select>
+
+<div>Select your challenge</div>
+
 
 <div>Connect your FitBit</div>
 
 <div>Name your challenge</div>
-
-<div>Start Challenge</div>
+<div class="button">
+  <button type="submit">Start Challenge</button>
+</div>
+</form>
 
 </body>
 </html>
