@@ -35,7 +35,7 @@ app.get('/challenge/2', function(request, response) {
 });
 
 app.post('/challenge/2/donate', function(request, response) {
-    models.getModels().then(ms => {
+    models.then(ms => {
         return ms.Donations.create({
             challenge_id: 2,
             name: "Daniel Pyrathon",
