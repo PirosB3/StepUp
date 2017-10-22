@@ -1,5 +1,8 @@
 var express = require('express');
+var bodyParser = require('body-parser')
 var app = express();
+var models = require('./models');
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -22,7 +25,15 @@ app.get('/challenge/2', function(request, response) {
 });
 
 app.post('/challenge/2/donate', function(request, response) {
-  response.render('pages/detail');
+    models.getModels().then(ms => {
+        return ms.Donations.create({
+            challenge_id: 2,
+            name: "Daniel Pyrathon",
+            amount: 10
+        });
+    }).then(() => {
+        return response.redirect('/challenge/2');
+    });
 });
 
 app.post('/create', function(request, response) {
