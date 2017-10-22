@@ -20,11 +20,12 @@ const Report = sequelize.define('report', {
 });
 
 
-const Challenge = sequelize.define('report', {
+const Challenge = sequelize.define('challenge', {
   user_id: Sequelize.STRING,
   startDate: Sequelize.DATE,
   endDate: Sequelize.DATE,
   title: Sequelize.STRING,
+  cause: Sequelize.STRING,
   amount_usd: Sequelize.INTEGER
 });
 

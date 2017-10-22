@@ -1,8 +1,11 @@
 var express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var models = require('./models.js').getModels();
+
 var app = express();
-var models = require('./models');
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -21,11 +24,11 @@ app.get('/create', function(request, response) {
 });
 
 app.get('/challenge/2', function(request, response) {
-    models.getModels().then(ms => {
+    models.then(ms => {
         return ms.Donations.findAll({where: {challenge_id: '2'}});
     }).then((donations) => {
         console.log(donations);
-        response.render('pages/detail', {
+        response.render('pages/hardcodeddetail', {
             donations: donations
         });
     });
@@ -55,7 +58,18 @@ app.get('/status', function(request, response) {
 });
 
 app.post('/challenge', function(request, response) {
-  response.status(200).send('Success!');
+  console.log(request.body);
+  var form = request.body;
+  models.then(models => {
+    models.Challenge.create({
+      title: form.challengeName
+    })
+      .then(r => response.render('pages/detail', {
+        title: form.challengeName,
+        donations: []
+      }))
+      .catch(err => console.log(err))
+  }).catch(err => console.log(err));
 });
 
 app.listen(app.get('port'), function() {

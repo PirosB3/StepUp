@@ -14,13 +14,14 @@
             <div class="col-md-8 create-event-meta">
                 <div class="row">
                     <div class="col-md-12">
-                        <form>
+                        <form action="/challenge" method="post" id="challengeform">
                           <div class="form-group">
                             <label>Select a Cause</label>
-                            <select class="form-control border-top-radius">
-                              <option>ALS Foundation</option>
-                              <option>Bill & Melinda Gates</option>
-                              <option>Marie Curie</option>
+                            <select class="form-control border-top-radius" name="cause">
+                              <option value="maria">Hurricane Maria</option>
+                              <option value="harvey">Hurricane Harvey</option>
+                              <option value="irma">Hurricane Irma</option>
+                              <option value="fires">NorCal Fires</option>
                             </select>
                           </div>
 
@@ -46,11 +47,11 @@
 
                           <div class="form-group">
                             <label>Name your Challenge</label> </br>
-                            <input type="text"></input>
+                            <input type="text" name="challengeName"></input>
                           </div>
-
                         </form>
-                    </div>
+                        <button type="submit" form="challengeform" value="Submit">Create!</button>
+                  </div>
                 </div>
             </div>
         </div>
